@@ -1,6 +1,6 @@
 {
   "name": "@amctheatres/apollo-client",
-  "version": "2.2.1",
+  "version": "2.2.2",
   "description": "A simple yet functional GraphQL client.",
   "main": "./lib/bundle.umd.js",
   "module": "./lib/index.js",
