@@ -936,7 +936,7 @@ export class QueryManager<TStore> {
   }
 
   public getCurrentQueryResult<T>(observableQuery: ObservableQuery<T>) {
-    const { variables, query } = observableQuery.options;
+    const { variables, query, debugging } = observableQuery.options;
     const lastResult = observableQuery.getLastResult();
     const { newData } = this.getQuery(observableQuery.queryId);
     // XXX test this
@@ -954,6 +954,9 @@ export class QueryManager<TStore> {
 
         return maybeDeepFreeze({ data, partial: false });
       } catch (e) {
+        if (debugging) {
+          console.error(e);
+        }
         return maybeDeepFreeze({ data: {}, partial: true });
       }
     }

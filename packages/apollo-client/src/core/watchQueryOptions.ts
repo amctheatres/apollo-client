@@ -66,6 +66,12 @@ export interface ModifiableWatchQueryOptions {
    * Whether or not updates to the network status should trigger next on the observer of this query
    */
   notifyOnNetworkStatusChange?: boolean;
+
+  /**
+   * Added by AMC:
+   * Whether or not to dump debug data to console
+   */
+  debugging?: boolean;
 }
 
 /**
